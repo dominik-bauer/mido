@@ -9,3 +9,6 @@
     - Nummernschilder Analyse
     - eInk Kalenderstation mit ESP32
     - Bewässerungsautomat mit ESP32
+
+## Links
+- https://github.com/rust-lang/rustlings
