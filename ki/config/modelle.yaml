@@ -1,0 +1,17 @@
+# Aktives Modell. Wechsel nur hier, nicht im Code (F-2).
+# Kandidaten und Begründung: ../docs/modellauswahl.md
+aktiv: qwen3-8b
+
+modelle:
+  qwen3-8b:
+    ollama: qwen3:8b            # Q4_K_M, ca. 5 GB
+    lizenz: Apache-2.0
+  mistral-small:
+    ollama: mistral-small3.2    # ca. 15 GB, braucht große GPU oder viel RAM
+    lizenz: Apache-2.0
+  olmo2-7b:
+    ollama: olmo2:7b
+    lizenz: Apache-2.0
+  qwen3-1.7b:
+    ollama: qwen3:1.7b          # für schwache Hardware / Raspberry Pi 5
+    lizenz: Apache-2.0

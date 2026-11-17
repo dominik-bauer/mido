@@ -1,2 +1,12 @@
 # exclude !/<PATH>
 # include /<PATH>
+
+# KI-Projekt: Modelle, private Dokumente und Rohdaten nicht einchecken
+ki/modelle/*
+!ki/modelle/README.md
+ki/wissensbasis/dokumente/*
+!ki/wissensbasis/dokumente/.gitkeep
+ki/training/daten/roh/
+*.gguf
+*.safetensors
+.env
