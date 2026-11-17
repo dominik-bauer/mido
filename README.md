@@ -9,6 +9,7 @@
     - Nummernschilder Analyse
     - eInk Kalenderstation mit ESP32
     - Bewässerungsautomat mit ESP32
+    - Eigene KI (lokal betriebener Assistent, Anforderungen: docs/eigene-ki-anforderungen.md)
 
 ## Links
 - https://github.com/rust-lang/rustlings
