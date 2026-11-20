@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eigene KI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="kopf">
+    <h1>Eigene KI</h1>
+    <dl class="status" id="status" aria-live="polite">
+      <div><dt>Modell</dt><dd id="st-modell">–</dd></div>
+      <div><dt>Ollama</dt><dd id="st-ollama">–</dd></div>
+      <div><dt>RAM frei</dt><dd id="st-ram">–</dd></div>
+      <div><dt>CPU</dt><dd id="st-cpu">–</dd></div>
+    </dl>
+  </header>
+
+  <main class="layout">
+    <section class="chat" aria-label="Gespräch">
+      <div class="verlauf" id="verlauf">
+        <p class="leer" id="leer">Stell eine Frage. Antworten und Code-Blöcke lassen sich als Artefakt speichern.</p>
+      </div>
+      <form class="eingabe" id="eingabe">
+        <textarea id="prompt" rows="3" placeholder="Nachricht … (Enter sendet, Umschalt+Enter für neue Zeile)" autofocus></textarea>
+        <div class="knoepfe">
+          <button type="button" class="leise" id="neu">Neues Gespräch</button>
+          <button type="button" class="leise" id="gespraech-speichern" disabled>Gespräch speichern</button>
+          <span class="platz"></span>
+          <button type="button" id="stopp" hidden>Stopp</button>
+          <button type="submit" class="haupt" id="senden">Senden</button>
+        </div>
+      </form>
+    </section>
+
+    <aside class="artefakte" aria-label="Artefakte">
+      <div class="artefakte-kopf">
+        <h2>Artefakte</h2>
+        <button type="button" class="leise" id="artefakt-neu">+ Neu</button>
+      </div>
+      <ul id="artefakt-liste"></ul>
+      <p class="leer" id="artefakte-leer">Noch nichts gespeichert.</p>
+    </aside>
+  </main>
+
+  <dialog id="dlg-speichern">
+    <form method="dialog" id="form-speichern">
+      <h2>Als Artefakt speichern</h2>
+      <label>Name
+        <input id="sp-name" maxlength="100" required autocomplete="off">
+      </label>
+      <label>Inhalt
+        <textarea id="sp-inhalt" rows="10" spellcheck="false"></textarea>
+      </label>
+      <p class="meldung" id="sp-meldung" role="alert"></p>
+      <div class="knoepfe">
+        <span class="platz"></span>
+        <button type="button" class="leise" id="sp-abbrechen">Abbrechen</button>
+        <button type="submit" class="haupt" id="sp-ok">Speichern</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="dlg-ansicht">
+    <h2 id="an-name"></h2>
+    <pre id="an-inhalt"></pre>
+    <p class="meldung" id="an-meldung" role="alert"></p>
+    <div class="knoepfe">
+      <button type="button" class="gefahr" id="an-loeschen">Löschen</button>
+      <span class="platz"></span>
+      <button type="button" class="leise" id="an-prompt">In Prompt einfügen</button>
+      <button type="button" class="leise" id="an-bearbeiten">Bearbeiten</button>
+      <a class="knopf leise" id="an-download">Herunterladen</a>
+      <button type="button" class="haupt" id="an-schliessen">Schließen</button>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

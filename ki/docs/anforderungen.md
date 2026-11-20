@@ -114,6 +114,7 @@ Priorität nach MoSCoW: **M** = Muss, **S** = Soll, **K** = Kann.
 | Vorhandener PC mit GPU (≥ 8 GB VRAM) | 7–8B-Modelle, kleines Feintuning | Bevorzugt für den Start |
 | Mini-PC / Laptop ohne GPU | 1–4B-Modelle, langsamer | Günstig, sparsam im Dauerbetrieb |
 | Raspberry Pi 5 | Sehr kleine Modelle, Sprach-Frontend | Eher als Zusatzgerät |
+| Raspberry Pi 3 (1 GB RAM) | Nur das kleinste Modell (Qwen3-0.6B), wenige Token/s | Machbarkeitstest, siehe `../deploy/README.md`; N-3 ist hier nicht erreichbar |
 | ESP32 | Nur Client (Anzeige, Mikrofon, Taster) | Keine Inferenz auf dem Gerät |
 
 ## 7. Grobe Architektur (Vorschlag)

@@ -26,8 +26,19 @@ ki/
 │   ├── web/         Weboberfläche
 │   ├── cli-rust/    Kommandozeilen-Client in Rust
 │   └── esp32/       ESP32-Geräte (z. B. eInk-Kalenderstation)
-└── deploy/          Docker Compose für alle Dienste
+├── deploy/          Start und Deployment (lokal, Raspberry Pi 3)
+└── daten/           Laufzeitdaten, z. B. gespeicherte Artefakte (nicht eingecheckt)
 ```
+
+## Schnellstart
+
+```sh
+ollama pull qwen3:8b            # bzw. das Modell aus config/modelle.yaml
+python3 ki/assistent/server.py  # Dashboard: http://localhost:8080/
+```
+
+Auf dem Raspberry Pi 3: `ki/deploy/pi3/deploy.sh nutzer@raspberrypi.local`.
+Details in [deploy/README.md](deploy/README.md).
 
 ## Meilensteine
 

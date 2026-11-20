@@ -1,7 +1,15 @@
 # Aktives Modell. Wechsel nur hier, nicht im Code (F-2).
 # Kandidaten und Begründung: ../docs/modellauswahl.md
+#
+# Pro Gerät überschreibbar mit der Umgebungsvariable KI_MODELL
+# (z. B. KI_MODELL=qwen3-0.6b auf dem Raspberry Pi 3, siehe ../deploy/pi3/).
 aktiv: qwen3-8b
 
+# Felder je Modell:
+#   ollama    Ollama-Tag
+#   lizenz    Lizenz des Modells (N-8)
+#   denken    optional; false schaltet den Denkmodus (Reasoning) ab
+#   optionen  optional; Ollama-Optionen wie num_ctx, num_predict, temperature
 modelle:
   qwen3-8b:
     ollama: qwen3:8b            # Q4_K_M, ca. 5 GB
@@ -15,3 +23,10 @@ modelle:
   qwen3-1.7b:
     ollama: qwen3:1.7b          # für schwache Hardware / Raspberry Pi 5
     lizenz: Apache-2.0
+  qwen3-0.6b:
+    ollama: qwen3:0.6b          # ca. 0,5 GB, für Raspberry Pi 3 (1 GB RAM)
+    lizenz: Apache-2.0
+    denken: false               # Denkmodus kostet auf dem Pi zu viele Token
+    optionen:
+      num_ctx: 2048             # kleiner Kontext spart RAM
+      num_predict: 512          # Antwortlänge begrenzen

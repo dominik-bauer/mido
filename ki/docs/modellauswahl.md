@@ -54,6 +54,7 @@ Richtwerte für 4-Bit-Quantisierung (Q4_K_M), Inferenz:
 | GPU 24 GB VRAM | Mistral Small 3.x oder Qwen3-32B |
 | Nur CPU, 16 GB RAM | Qwen3-4B / SmolLM3-3B (langsam, aber nutzbar) |
 | Raspberry Pi 5 (8 GB) | Qwen3-1.7B / Qwen3-0.6B |
+| Raspberry Pi 3 (1 GB) | Qwen3-0.6B, Denkmodus aus, kleiner Kontext (braucht Swap) |
 
 Richtwerte für Feintuning mit QLoRA (Unsloth):
 
